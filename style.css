@@ -1,14 +1,6 @@
-#intro {
-  display: flex;
-  justify-content: center;
-}
-
-#app-name {
-  display: flex;
-  justify-content: center;
-}
-
-navbar {
+#intro,
+#app-name,
+.navbar {
   display: flex;
   justify-content: center;
 }
@@ -16,4 +8,9 @@ navbar {
 .my-favorites {
   display: flex;
   justify-content: space-between;
+}
+
+#app-name {
+  font-size: 25px;
+  font-weight: bold;
 }
