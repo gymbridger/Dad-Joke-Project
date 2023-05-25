@@ -1,6 +1,6 @@
 // chuck fetch code with button
-var joke = document.getElementById("chuck");
-var button = document.getElementById("button");
+var joke = document.getElementById("populate-joke");
+var button = document.getElementById("joke-button");
 
 function getChuck() {
 
@@ -14,8 +14,7 @@ function getChuck() {
             console.log(chuckJoke.value);
             joke.textContent = chuckJoke.value
         })
-}
-
+};
 
 
 button.addEventListener("click", getChuck);
