@@ -1,0 +1,19 @@
+#intro {
+  display: flex;
+  justify-content: center;
+}
+
+#app-name {
+  display: flex;
+  justify-content: center;
+}
+
+navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.my-favorites {
+  display: flex;
+  justify-content: space-between;
+}
