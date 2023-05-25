@@ -14,57 +14,59 @@
 
     <link rel="stylesheet" href="style.css"></link>
     <title>Dad Jokes</title>
-    </head>
+  </head>
+  <body>
 
-        <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-2">
-            1 of 3
-            </div>
-            <body>
-            <div class="col-md-auto content"> 
-            <div>
-            <header>
-                <div>
-                <div id="Intro">Header</div>
-                <div id="app-name">Cheer Up App</div>
-                </div>
-            </header>
-
-            <nav>
-                <div id="Option">
-                Choose joke category
-                <ul>
-                    <li>category</li>
-                    <li>category</li>
-                </ul>
-                </div>
-            </nav>
-
-            <section>
-                <div>
-                <button id="favorite-button">Favorite This!</button>
-                </div>
-                <div class="jokes" id="populate-joke">joke is here</div>
-            </section>
-
-            <section>
-                <div>
-                <button id="joke-button">Click for a joke!</button>
-                </div>
-            </section>
-
-            <section>
-                <div class="favorite-jokes">Here i will store my Favorite Jokes!</div>
-            </section>
-            </div>
-        </body>
-            </div>
-            <div class="col col-lg-2">
-            3 of 3
-            </div>
-
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+      1 of 3
+    </div>
+    
+    <div class="col-md-auto content"> 
+    <div>
+      <header class="joke-app-header">
+        <div>
+          <div id="intro">Header</div>
+          <div id="app-name">Cheer Up App</div>
         </div>
+    </header>
+
+      <nav class="navbar navbar-light bg-light">
+  <form class="container-fluid justify-content-start">
+    <button class="btn btn-outline-success me-2" type="button">Dad Joke</button>
+    <button class="btn btn-outline-success me-2" type="button">Chuck Norris Joke</button>
+  </form>
+</nav>
+
+      <section class="my-favorites">
+        <div>
+          <button type="button" class="btn btn-secondary">Favorite This!</button>
         </div>
-        <script src="./assets/script.js"></script>
+        <div id="populate-joke">joke is here</div>
+      </section>
+
+      <section class="joke-creator">
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button">Click Here For A Joke</button>
+        </div>
+      </section>
+
+      <section class="store-jokes">
+        <ul class="list-group">
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+  <li class="list-group-item">A fourth item</li>
+  <li class="list-group-item">And a fifth one</li>
+</ul>
+      </section>
+    </div>
+     </div>
+    <div class="col col-lg-2">
+      3 of 3
+    </div>
+  </div>
+  </div>
+  </body>
   </html>
