@@ -1,6 +1,11 @@
 
-const jokeButton = document.querySelector(".getJoke");
-const jokeHolder = document.querySelector("#joke");
+const jokeButton = document.querySelector(".btn-primary");
+const jokeHolder = document.querySelector("#populate-joke");
+const dadJokes = "http://icanhazdadjoke.com";
+const chuckJokes = "https://api.chucknorris.io/jokes/random";
+
+
+selectorArray= [];
 
 async function fetchJoke() {
     const response = await fetch("http://icanhazdadjoke.com", {
@@ -10,35 +15,39 @@ async function fetchJoke() {
         });
     const joke = await response.json();
     console.log(joke)
-    }
-
-    fetchJoke();
-
-    async function handleClick() {
-        const { joke } = await fetchJoke();
-        console.log(joke);
-      }
-
-      jokeButton.addEventListener("click", handleClick);
-
-// chuck fetch code with button
-var joke = document.getElementById("populate-joke");
-var button = document.getElementById("joke-button");
-
-function getChuck() {
-
-    var requestURL = "https://api.chucknorris.io/jokes/random";
-
-    fetch(requestURL)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (chuckJoke) {
-            console.log(chuckJoke.value);
-            joke.textContent = chuckJoke.value
-        })
+    jokeHolder.textContent = joke.joke;    
+    
 };
 
+async function handleClick() {
+    await fetchJoke();
+};
 
-button.addEventListener("click", getChuck);
+jokeButton.addEventListener("click", handleClick);
+
+
+
+
+
+
+
+    
+
+// function getChuck() {
+
+//     var requestURL = chuckJokes;
+
+//     fetch(requestURL)
+//         .then(function (response) {
+//             return response.json();
+//         })
+//         .then(function (chuckJoke) {
+//             console.log(chuckJoke.value);
+//             jokeHolder.textContent = chuckJoke.value
+//         })
+// };
+
+
+
+// jokeButton.addEventListener("click", getChuck);
 
