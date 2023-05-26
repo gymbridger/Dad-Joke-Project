@@ -1,0 +1,16 @@
+#intro,
+#app-name,
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.my-favorites {
+  display: flex;
+  justify-content: space-between;
+}
+
+#app-name {
+  font-size: 25px;
+  font-weight: bold;
+}
