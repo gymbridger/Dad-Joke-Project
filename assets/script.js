@@ -1,6 +1,6 @@
 
-const jokeButton = document.querySelector(".getJoke");
-const jokeHolder = document.querySelector("#joke");
+const jokeButton = document.querySelector(".btn-primary");
+const jokeHolder = document.querySelector(".populate-joke");
 
 async function fetchJoke() {
     const response = await fetch("http://icanhazdadjoke.com", {
@@ -9,16 +9,15 @@ async function fetchJoke() {
         },
         });
     const joke = await response.json();
-    console.log(joke)
+    console.log(joke.joke)
+    jokeHolder.textContent = joke.joke;
     }
 
-    fetchJoke();
-
     async function handleClick() {
-        const { joke } = await fetchJoke();
-        console.log(joke);
-      }
+        await fetchJoke();
 
+      }
+      
       jokeButton.addEventListener("click", handleClick);
 
 // chuck fetch code with button
@@ -42,3 +41,10 @@ function getChuck() {
 
 button.addEventListener("click", getChuck);
 
+let remove = document.createElement("button")
+  remove.setAttribute('id', 'delete-btn')
+  remove.innerText = "remove favorite"
+  remove.addEventListener("click", function(event) {
+  })
+
+  
