@@ -1,3 +1,8 @@
+
+.justify-content-md-center {
+  background-color: orange;
+}
+
 #intro,
 #app-name,
 .navbar {
@@ -11,6 +16,57 @@
 }
 
 #app-name {
-  font-size: 25px;
+  font-size: 75px;
   font-weight: bold;
+  font-style: italic;
+  border-bottom: 2px solid black;
+}
+
+.joke-app-header {
+  padding: 50px;
+}
+
+.emoji-button {
+  border-radius: 5px;
+  background-color: lightblue;
+  border: 2px solid black;
+  color: #ffffff;
+  padding: 5px;
+  width: 125px;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.emoji-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.emoji-button:hover {
+  background-color: lightblue;
+}
+
+.emoji-button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.emoji-button:hover span {
+  padding-right: 25px;
+}
+
+.emoji-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.emoji-button:active {
+  transform: translateY(4px);
 }

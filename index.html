@@ -28,22 +28,24 @@
     <div>
       <header class="joke-app-header">
         <div>
-          <div id="app-name">Cheer Up App</div>
+          <div id="app-name">&#9755; Cheer Up App &#9754;</div>
         </div>
     </header>
 
       <nav class="navbar navbar-light bg-light">
   <form class="container-fluid justify-content-start">
-    <button class="btn btn-outline-success me-2" type="button">Dad Joke</button>
-    <button class="btn btn-outline-success me-2" type="button">Chuck Norris Joke</button>
+
+    <button class="btn btn-outline-success me-2" id="random" type="button">Random</button>
+    <button class="btn btn-outline-success me-2" id="dad" type="button">Dad Joke</button>
+    <button class="btn btn-outline-success me-2" id="chuck" type="button">Chuck Norris Joke</button>
   </form>
 </nav>
 
       <section class="my-favorites">
         <div>
-          <button type="button" class="btn btn-secondary">Favorite This! ⭐</button>
+          <button type="button" class="btn btn-secondary emoji-button"><span>⭐</span></button>
         </div>
-        <div id="populate-joke">joke is here</div>
+        <div id="populate-joke"></div>
       </section>
 
       <section class="joke-creator">
