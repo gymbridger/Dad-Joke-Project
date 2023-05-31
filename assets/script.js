@@ -3,7 +3,8 @@ const jokeButton = document.querySelector(".btn-primary");
 const jokeHolder = document.querySelector("#populate-joke");
 const dadJokes = "http://icanhazdadjoke.com";
 const chuckJokes = "https://api.chucknorris.io/jokes/random";
-
+var dadButton = document.querySelector("#dadButton")
+var chuckButton = document.querySelector("#chuckButton")
 
 selectorArray= [];
 
@@ -14,11 +15,20 @@ async function fetchJoke() {
         },
         });
     const joke = await response.json();
-    console.log(joke)
     jokeHolder.textContent = joke.joke;    
     
 };
+async function fetchJoke2() {
+    const response = await fetch("https://api.chucknorris.io/jokes/random", {
+        headers: {
+            Accept: "application/json",
+        },
+        });
+    const joke = await response.json();
+    jokeHolder.textContent = joke.joke; 
+    };
 
+if (dadButton = )
 async function handleClick() {
     await fetchJoke();
 };
