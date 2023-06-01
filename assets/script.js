@@ -65,19 +65,10 @@ async function fetchJoke() {
     jokeHolder.textContent = joke.joke || joke.value;  
     
 };
-async function fetchJoke2() {
-    const response = await fetch("https://api.chucknorris.io/jokes/random", {
-        headers: {
-            Accept: "application/json",
-        },
-        });
-    const joke = await response.json();
-    jokeHolder.textContent = joke.joke; 
-    };
 
-if (dadButton = )
 async function handleClick() {
     await fetchJoke();
 };
+
 
 jokeButton.addEventListener("click", handleClick);
