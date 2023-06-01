@@ -79,7 +79,7 @@
 
 .favorite-button {
   margin: 15px;
-  width: 30%;
+  width: 15%;
 }
 
 .emoji-button {
@@ -131,6 +131,6 @@
   border: 3px dashed blue;
   background-color: white;
   width: max-content;
-  width: 70%;
+  width: 85%;
   margin: 15px;
 }
