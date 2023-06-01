@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
 
 .justify-content-md-center {
   background-color: orange;
@@ -15,7 +21,7 @@
 }
 
 #app-name {
-  font-size: 75px;
+  font-size: 70px;
   font-weight: bold;
   font-style: italic;
   border-bottom: 2px solid black;
@@ -27,21 +33,12 @@
   padding: 50px;
 }
 
-.navbar .container-fluid {
-  justify-content: space-evenly;
-}
-
 .navbar {
-  background-color: black;
-  margin: 25px;
-}
-
-.container-fluid {
   display: flex;
-  background-color: white;
-  padding: 25px;
-  border-right: 7px solid black;
-  border-left: 7px solid black;
+  justify-content: space-around;
+  background-color: black;
+  margin: 15px;
+  border: 5px solid black;
 }
 
 .navbar-button {
@@ -87,6 +84,11 @@
   background-color: lightblue;
 }
 
+.favorite-button {
+  margin: 15px;
+  width: 30%;
+}
+
 .emoji-button {
   border-radius: 5px;
   background-color: lightblue;
@@ -130,4 +132,12 @@
 
 .emoji-button:active {
   transform: translateY(4px);
+}
+
+#populate-joke {
+  border: 3px dashed blue;
+  background-color: white;
+  width: max-content;
+  width: 70%;
+  margin: 15px;
 }
