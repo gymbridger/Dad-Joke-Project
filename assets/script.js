@@ -1,4 +1,3 @@
-
 const jokeButton = document.querySelector(".btn-primary");
 const jokeHolder = document.querySelector("#populate-joke");
 const dadJokesURL = "http://icanhazdadjoke.com";
