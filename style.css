@@ -150,3 +150,15 @@
 .header {
   border: 5px solid black;
 }
+
+p {
+  flex-grow: 1;
+}
+
+.col-12.col-md-2 {
+  background-image: url(./project\ 1\ photo.jpg);
+}
+
+.col-2.col-md-2 {
+  background-image: url(./project\ 1\ photo.jpg);
+}
