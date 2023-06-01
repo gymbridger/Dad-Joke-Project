@@ -67,7 +67,6 @@
 
 .favorite-button {
   margin: 15px;
-  width: 15%;
 }
 
 .emoji-button {
@@ -123,8 +122,6 @@
 #populate-joke {
   border: 3px groove black;
   background-color: white;
-  width: max-content;
-  width: 85%;
   margin: 15px;
 }
 
@@ -138,4 +135,36 @@
 
 .btn:focus {
   outline: none;
+}
+
+@media screen and (max-width: 1077px) {
+  #app-name {
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 881px) {
+  #app-name {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #app-name {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #app-name {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 403px) {
+  #chuck,
+  #random,
+  #dad {
+    flex-direction: column;
+  }
 }
