@@ -1,5 +1,9 @@
 .justify-content-md-center {
-  background-color: rgb(255, 194, 81);
+  background-image: url(./project\ 1\ photo.jpg);
+}
+
+.header {
+  background-color: antiquewhite;
 }
 
 #intro,
@@ -157,17 +161,4 @@ p {
 
 .col-12.col-md-8 {
   padding: 0px 0px 0px 0px;
-}
-
-.col-12.col-md-2 {
-  background-image: url(./project\ 1\ photo.jpg);
-}
-
-.col-2.col-md-2 {
-  background-image: url(./project\ 1\ photo.jpg);
-}
-
-#bottom-image {
-  background-image: url(./project\ 1\ photo.jpg);
-  height: 193px;
 }
