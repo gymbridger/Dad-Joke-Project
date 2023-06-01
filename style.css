@@ -3,8 +3,7 @@
 }
 
 #intro,
-#app-name,
-.navbar {
+#app-name {
   display: flex;
   justify-content: center;
 }
@@ -22,7 +21,69 @@
 }
 
 .joke-app-header {
+  display: flex;
+  justify-content: center;
   padding: 50px;
+}
+
+.navbar .container-fluid {
+  justify-content: space-evenly;
+}
+
+.navbar {
+  background-color: black;
+  margin: 25px;
+}
+
+.container-fluid {
+  display: flex;
+  background-color: white;
+  padding: 25px;
+  border-right: 7px solid black;
+  border-left: 7px solid black;
+}
+
+.navbar-button {
+  background-color: lightblue;
+  font-size: 20px;
+  color: black;
+  border: 2px solid black;
+}
+
+.navbar-button:hover {
+  background-color: yellow;
+  color: black;
+  border: 2px solid black;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar-button:active {
+  transform: translateY(4px);
+}
+
+.joke-creator {
+  border: 5px solid black;
+  padding: 25px;
+  margin: 15px;
+}
+
+.joke-creator-button {
+  background-color: lightblue;
+  color: black;
+  border: 2px solid black;
+  font-size: 35px;
+}
+
+.joke-creator-button:hover {
+  background-color: yellow;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.joke-creator-button:active {
+  background-color: lightblue;
 }
 
 .emoji-button {
