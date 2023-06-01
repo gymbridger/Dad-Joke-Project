@@ -6,12 +6,19 @@ const chuckJokesURL = "https://api.chucknorris.io/jokes/random";
 const randomButton = document.querySelector("#random");
 const dadButton = document.querySelector("#dad");
 const chuckButton = document.querySelector("#chuck");
+const favoritesButton = document.querySelector(".emoji-button");
+const favoritesList = document.querySelector(".list-group");
+
 
 //start array set to 'random' configuration by default, use a choice function to determine final array to fetch jokes from
 apiArray = [dadJokesURL, chuckJokesURL];
 
 
 
+//button clicks reset array then push chosen URLs. NOTE** This method does not scale easily if more APIs are added in the future and the user wants to filter multiple APIs. **
+randomButton.addEventListener("click", function() {
+    apiArray = []
+})
 //button clicks reset array then push chosen URLs. NOTE** This method does not scale easily if more APIs are added in the future and the user wants to filter multiple APIs. **
 randomButton.addEventListener("click", function() {
     apiArray = []
@@ -24,6 +31,7 @@ randomButton.addEventListener("click", function() {
 
 dadButton.addEventListener("click", function() {
     apiArray = []
+
     this.setAttribute("class", "btn btn-success me-2");
     randomButton.setAttribute("class", "btn btn-outline-success me-2");
     chuckButton.setAttribute("class", "btn btn-outline-success me-2");
@@ -33,6 +41,7 @@ dadButton.addEventListener("click", function() {
 
 chuckButton.addEventListener("click", function() {
     apiArray = []
+
     this.setAttribute("class", "btn btn-success me-2");
     randomButton.setAttribute("class", "btn btn-outline-success me-2");
     dadButton.setAttribute("class", "btn btn-outline-success me-2");
@@ -70,5 +79,87 @@ async function handleClick() {
     await fetchJoke();
 };
 
+
+
+// Event listener for the "my-favorites" button
+favoritesButton.addEventListener("click", saveJokeToFavorites);
+
+// Function to save a joke to the "my favorites" list
+function saveJokeToFavorites() {
+  // Get the current joke text
+  const jokeText = jokeHolder.textContent;
+
+  // Retrieve the favorite jokes from local storage or initialize an empty array
+  let favoriteJokes = JSON.parse(localStorage.getItem("jokeHolder")) || [];
+
+  // Add to the favorite jokes list
+  favoriteJokes.push(jokeText);
+
+  // Save the updated favorite jokes list to local storage
+  localStorage.setItem("jokeHolder", JSON.stringify(favoriteJokes));
+
+  // Update the "my favorites" list in the HTML
+  updateFavoritesList(favoriteJokes);
+}
+
+// Function to update the "my favorites" list in the HTML
+function updateFavoritesList(jokes) {
+  // Clear the current "my favorites" list
+  favoritesList.textContent = "";
+
+  // Add each joke to the "my favorites" list
+  jokes.forEach((joke) => {
+    const listItem = document.createElement("li");
+    listItem.classList.add("list-group-item");
+    listItem.textContent = joke;
+
+    // Create a button to remove the joke
+    const removeButton = document.createElement("button");
+    removeButton.classList.add("btn", "btn-danger", "btn-sm");
+    removeButton.textContent = "Remove";
+    removeButton.addEventListener("click", () => {
+      removeJokeFromFavorites(joke);
+    });
+
+    // Append the remove button to the list item
+    listItem.appendChild(removeButton);
+
+    // Append the list item to the "my favorites" list
+    favoritesList.appendChild(listItem);
+  });
+}
+
+// Function to remove a joke from the "my favorites" list
+function removeJokeFromFavorites(joke) {
+  // Retrieve the favorite jokes from local storage
+  const favoriteJokes = JSON.parse(localStorage.getItem("jokeHolder"));
+
+  // Remove the selected joke from the favorite jokes list
+  const updatedJokes = favoriteJokes.filter((j) => j !== joke);
+
+  // Save the updated favorite jokes list to local storage
+  localStorage.setItem("jokeHolder", JSON.stringify(updatedJokes));
+
+  // Update the "my favorites" list in the HTML
+  updateFavoritesList(updatedJokes);
+}
+
+// Function to populate the "my favorites" list from local storage
+function populateFavoritesListFromStorage() {
+  // Retrieve the favorite jokes from local storage
+  const favoriteJokes = JSON.parse(localStorage.getItem("jokeHolder"));
+
+  // If there are favorite jokes, update the "my favorites" list in the HTML
+  if (favoriteJokes) {
+    updateFavoritesList(favoriteJokes);
+  }
+}
+
+// Populate the "my favorites" list from local storage when the page loads
+populateFavoritesListFromStorage();
+
+async function handleClick() {
+        await fetchJoke();
+}
 
 jokeButton.addEventListener("click", handleClick);
