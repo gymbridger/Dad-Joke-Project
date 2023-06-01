@@ -32,10 +32,13 @@
         </div>
     </header>
 
-      <nav class="navbar">
-  <form class="container-fluid">
-    <button class="btn btn-outline-success me-2 navbar-button" type="button">Dad Joke</button>
-    <button class="btn btn-outline-success me-2 navbar-button" type="button">Chuck Norris Joke</button>
+
+      <nav class="navbar navbar-light bg-light">
+  <form class="container-fluid justify-content-start">
+
+    <button class="btn btn-outline-success me-2" id="random" type="button">Random</button>
+    <button class="btn btn-outline-success me-2" id="dad" type="button">Dad Joke</button>
+    <button class="btn btn-outline-success me-2" id="chuck" type="button">Chuck Norris Joke</button>
   </form>
 </nav>
 
@@ -43,7 +46,7 @@
         <div>
           <button type="button" class="btn btn-secondary emoji-button"><span>⭐</span></button>
         </div>
-        <div id="populate-joke">joke is here</div>
+        <div id="populate-joke"></div>
       </section>
 
       <section class="joke-creator">
