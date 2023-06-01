@@ -11,21 +11,31 @@ const chuckButton = document.querySelector("#chuck");
 apiArray = [dadJokesURL, chuckJokesURL];
 
 
+
 //button clicks reset array then push chosen URLs. NOTE** This method does not scale easily if more APIs are added in the future and the user wants to filter multiple APIs. **
 randomButton.addEventListener("click", function() {
     apiArray = []
+    this.setAttribute("class", "btn btn-success me-2");
+    dadButton.setAttribute("class", "btn btn-outline-success me-2");
+    chuckButton.setAttribute("class", "btn btn-outline-success me-2");
     apiArray.push(dadJokesURL, chuckJokesURL);
     console.log(apiArray);
 })
 
 dadButton.addEventListener("click", function() {
     apiArray = []
+    this.setAttribute("class", "btn btn-success me-2");
+    randomButton.setAttribute("class", "btn btn-outline-success me-2");
+    chuckButton.setAttribute("class", "btn btn-outline-success me-2");
     apiArray.push(dadJokesURL);
     console.log(apiArray);
 })
 
 chuckButton.addEventListener("click", function() {
     apiArray = []
+    this.setAttribute("class", "btn btn-success me-2");
+    randomButton.setAttribute("class", "btn btn-outline-success me-2");
+    dadButton.setAttribute("class", "btn btn-outline-success me-2");
     apiArray.push(chuckJokesURL);
     console.log(apiArray);
 })
