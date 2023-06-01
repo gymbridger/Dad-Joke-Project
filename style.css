@@ -63,8 +63,12 @@
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.joke-creator-button:active {
-  background-color: blue;
+.joke-creator-button:active,
+.joke-creator-button:focus {
+  box-shadow: none;
+  background-color: black;
+  color: white;
+  border: none;
 }
 
 .favorite-button {
