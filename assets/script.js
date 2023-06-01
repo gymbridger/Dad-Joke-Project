@@ -75,9 +75,8 @@ async function fetchJoke2() {
     jokeHolder.textContent = joke.joke; 
     };
 
-if (dadButton = )
 async function handleClick() {
-    await fetchJoke();
-};
+        await fetchJoke();
+}
 
 jokeButton.addEventListener("click", handleClick);
