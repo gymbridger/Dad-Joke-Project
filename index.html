@@ -12,20 +12,31 @@
       crossorigin="anonymous"
     />
 
+    <link rel="icon" type="image/x-icon" href="./assets/images/laugh.jpg">
     <link rel="stylesheet" href="style.css"></link>
     <title>Dad Jokes</title>
 
 </head>
 <body>
 
+
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col-12 col-md-2">
+
+<div class="container-fluid d-flex flex-column vh-100">
+  <div class="row justify-content-md-center flex-grow-1">
+    <div class="col-12 col-md-2 ">
+
       1 of 3
     </div>
     
     <div class="col-12 col-md-8 content"> 
+
     <div>
+
+    <div class = "header">
+
       <header class="joke-app-header">
         <div>
           <div id="app-name">&#9755; Cheer Up App &#9754;</div>
@@ -44,6 +55,17 @@
 
       <section class="my-favorites">
         <div>
+
+  <nav class="navbar navbar-light bg-light">
+    <button class="btn btn-success me-2" id="random" type="button">Random</button>
+
+    <button class="btn btn-outline-success me-2" id="dad" type="button">Dad Joke</button>
+    <button class="btn btn-outline-success me-2" id="chuck" type="button">Chuck Norris Joke</button>
+  </nav>
+
+      <section class="my-favorites">
+        <div class = "favorite-button">
+
           <button type="button" class="btn btn-secondary emoji-button"><span>⭐</span></button>
         </div>
         <div id="populate-joke"></div>
@@ -63,6 +85,12 @@
     </div>
      </div>
     <div class="col-12 col-md-2">
+        <ul class="list-group"></ul>
+
+      </section>
+    </div>
+     </div>
+    <div class="col-2 col-md-2">
       3 of 3
     </div>
   </div>
