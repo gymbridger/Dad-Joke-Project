@@ -161,11 +161,3 @@
     font-size: 25px;
   }
 }
-
-@media screen and (max-width: 403px) {
-  #chuck,
-  #random,
-  #dad {
-    flex-direction: column;
-  }
-}
