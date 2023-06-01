@@ -14,59 +14,60 @@
 
     <link rel="stylesheet" href="style.css"></link>
     <title>Dad Jokes</title>
-  </head>
-  <body>
+
+</head>
+<body>
 
 <div class="container">
   <div class="row justify-content-md-center">
-    <div class="col col-lg-2">
+    <div class="col-12 col-md-2">
       1 of 3
     </div>
     
-    <div class="col-md-auto content"> 
+    <div class="col-12 col-md-8 content"> 
     <div>
       <header class="joke-app-header">
         <div>
-          <div id="intro">Header</div>
-          <div id="app-name">Cheer Up App</div>
+          <div id="app-name">&#9755; Cheer Up App &#9754;</div>
         </div>
     </header>
 
+
       <nav class="navbar navbar-light bg-light">
   <form class="container-fluid justify-content-start">
-    <button class="btn btn-outline-success me-2" type="button">Dad Joke</button>
-    <button class="btn btn-outline-success me-2" type="button">Chuck Norris Joke</button>
+
+    <button class="btn btn-outline-success me-2" id="random" type="button">Random</button>
+    <button class="btn btn-outline-success me-2" id="dad" type="button">Dad Joke</button>
+    <button class="btn btn-outline-success me-2" id="chuck" type="button">Chuck Norris Joke</button>
   </form>
 </nav>
 
       <section class="my-favorites">
         <div>
-          <button type="button" class="btn btn-secondary">Favorite This!</button>
+          <button type="button" class="btn btn-secondary emoji-button"><span>⭐</span></button>
         </div>
-        <div id="populate-joke">joke is here</div>
+        <div id="populate-joke"></div>
       </section>
 
       <section class="joke-creator">
         <div class="d-grid gap-2">
-            <button class="btn btn-primary" type="button">Click Here For A Joke</button>
+            <button class="btn btn-primary joke-creator-button" type="button">Click Here For A Joke</button>
         </div>
       </section>
 
       <section class="store-jokes">
         <ul class="list-group">
-  <li class="list-group-item">An item</li>
-  <li class="list-group-item">A second item</li>
-  <li class="list-group-item">A third item</li>
-  <li class="list-group-item">A fourth item</li>
-  <li class="list-group-item">And a fifth one</li>
+
 </ul>
       </section>
     </div>
      </div>
-    <div class="col col-lg-2">
+    <div class="col-12 col-md-2">
       3 of 3
     </div>
   </div>
   </div>
+  <script src="./assets/script.js"></script>
   </body>
+
   </html>
