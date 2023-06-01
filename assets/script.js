@@ -158,8 +158,5 @@ function populateFavoritesListFromStorage() {
 // Populate the "my favorites" list from local storage when the page loads
 populateFavoritesListFromStorage();
 
-async function handleClick() {
-        await fetchJoke();
-}
 
 jokeButton.addEventListener("click", handleClick);
