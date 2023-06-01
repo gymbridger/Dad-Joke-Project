@@ -6,6 +6,10 @@
   background-color: antiquewhite;
 }
 
+.col-md-8 {
+  justify-content: center;
+}
+
 #intro,
 #app-name {
   display: flex;
@@ -38,25 +42,6 @@
   border: 5px solid black;
 }
 
-.navbar-button {
-  background-color: black;
-  font-size: 20px;
-  color: black;
-  border: 2px solid black;
-}
-
-.navbar-button:hover {
-  background-color: yellow;
-  color: black;
-  border: 2px solid black;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-.navbar-button:active {
-  transform: translateY(4px);
-}
-
 .joke-creator {
   padding: 25px;
   margin: 15px;
@@ -77,11 +62,7 @@
 }
 
 .joke-creator-button:active {
-  background-color: yellow;
-}
-
-.joke-creator-button:after {
-  background-color: green;
+  background-color: blue;
 }
 
 .favorite-button {
@@ -147,18 +128,14 @@
   margin: 15px;
 }
 
-.col-md-2 {
-  opacity: 0.4;
-}
-
 .header {
   border: 5px solid black;
 }
 
-p {
-  height: 175px;
-}
-
 .col-12.col-md-8 {
   padding: 0px 0px 0px 0px;
+}
+
+.btn:focus {
+  outline: none;
 }
