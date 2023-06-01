@@ -152,7 +152,11 @@
 }
 
 p {
-  flex-grow: 1;
+  height: 175px;
+}
+
+.col-12.col-md-8 {
+  padding: 0px 0px 0px 0px;
 }
 
 .col-12.col-md-2 {
@@ -161,4 +165,9 @@ p {
 
 .col-2.col-md-2 {
   background-image: url(./project\ 1\ photo.jpg);
+}
+
+#bottom-image {
+  background-image: url(./project\ 1\ photo.jpg);
+  height: 193px;
 }
