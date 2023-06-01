@@ -136,10 +136,6 @@
   padding: 0px 0px 0px 0px;
 }
 
-.btn:focus {
-  outline: none;
-}
-
 @media screen and (max-width: 1077px) {
   #app-name {
     font-size: 55px;
