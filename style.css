@@ -1,5 +1,5 @@
 .justify-content-md-center {
-  background-color: orange;
+  background-color: rgb(255, 194, 81);
 }
 
 #intro,
@@ -35,7 +35,7 @@
 }
 
 .navbar-button {
-  background-color: lightblue;
+  background-color: black;
   font-size: 20px;
   color: black;
   border: 2px solid black;
@@ -53,36 +53,31 @@
   transform: translateY(4px);
 }
 
-/* #random {
-  background-color: rgb(179, 216, 218);
-} */
-
-/* #dad {
-  background-color: rgb(179, 216, 218);
-} */
-
 .joke-creator {
-  border: 5px solid black;
   padding: 25px;
   margin: 15px;
 }
 
 .joke-creator-button {
-  background-color: lightblue;
-  color: black;
+  background-color: black;
+  color: white;
   border: 2px solid black;
   font-size: 35px;
 }
 
 .joke-creator-button:hover {
-  background-color: yellow;
+  background-color: white;
   color: black;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .joke-creator-button:active {
-  background-color: lightblue;
+  background-color: yellow;
+}
+
+.joke-creator-button:after {
+  background-color: green;
 }
 
 .favorite-button {
@@ -92,8 +87,8 @@
 
 .emoji-button {
   border-radius: 5px;
-  background-color: lightblue;
-  border: 2px solid black;
+  background-color: black;
+  border: 2px solid white;
   color: #ffffff;
   padding: 5px;
   width: 125px;
@@ -110,7 +105,12 @@
 }
 
 .emoji-button:hover {
-  background-color: lightblue;
+  background-color: black;
+}
+
+.emoji-button:focus {
+  background-color: black;
+  border: 5px solid white;
 }
 
 .emoji-button span:after {
@@ -136,9 +136,17 @@
 }
 
 #populate-joke {
-  border: 3px dashed blue;
+  border: 3px groove black;
   background-color: white;
   width: max-content;
   width: 85%;
   margin: 15px;
+}
+
+.col-md-2 {
+  opacity: 0.4;
+}
+
+.header {
+  border: 5px solid black;
 }
