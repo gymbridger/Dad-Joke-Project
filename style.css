@@ -19,6 +19,8 @@
 .my-favorites {
   display: flex;
   justify-content: space-between;
+  margin-left: 250px;
+  margin-right: 250px;
 }
 
 #app-name {
