@@ -53,14 +53,6 @@
   transform: translateY(4px);
 }
 
-/* #random {
-  background-color: rgb(179, 216, 218);
-} */
-
-/* #dad {
-  background-color: rgb(179, 216, 218);
-} */
-
 .joke-creator {
   border: 5px solid black;
   padding: 25px;
@@ -142,3 +134,34 @@
   width: 85%;
   margin: 15px;
 }
+=======
+#intro {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #app-name {
+    display: flex;
+    justify-content: center;
+  }
+  
+  navbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .my-favorites {
+    display: flex;
+    justify-content: space-between;
+  }
+  .list-group li {
+    cursor: pointer;
+  }
+  .list-group li:hover:after,
+  .list-group li.fav:after {
+    content: ' \2605';
+    color: rgb(255, 203, 0);
+  }
+  .list-group li.fav:hover:after {
+    content: ' \2606';
+  }
