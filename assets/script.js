@@ -1,4 +1,4 @@
-const jokeButton = document.querySelector(".btn-primary");
+const jokeButton = document.querySelector(".joke-creator-button");
 const jokeHolder = document.querySelector("#populate-joke");
 const dadJokesURL = "http://icanhazdadjoke.com";
 const chuckJokesURL = "https://api.chucknorris.io/jokes/random";
@@ -34,9 +34,9 @@ dadButton.addEventListener("click", function () {
 
 chuckButton.addEventListener("click", function () {
   apiArray = [];
-  this.setAttribute("class", "btn btn-success me-2");
-  randomButton.setAttribute("class", "btn btn-outline-success me-2");
-  dadButton.setAttribute("class", "btn btn-outline-success me-2");
+  this.setAttribute("class", "btn btn-dark me-2");
+  randomButton.setAttribute("class", "btn btn-outline-dark me-2");
+  dadButton.setAttribute("class", "btn btn-outline-dark me-2");
   apiArray.push(chuckJokesURL);
   console.log(apiArray);
 });
