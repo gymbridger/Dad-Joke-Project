@@ -6,7 +6,10 @@ const randomButton = document.querySelector("#random");
 const dadButton = document.querySelector("#dad");
 const chuckButton = document.querySelector("#chuck");
 
-jokeButton.addEventListener("click", handleClick);
+jokeButton.addEventListener("click", function () {
+  handleClick.call(this);
+  this.blur();
+});
 const favoritesButton = document.querySelector(".emoji-button");
 const favoritesList = document.querySelector(".list-group");
 
@@ -66,7 +69,10 @@ async function handleClick() {
 }
 
 // Event listener for the "my-favorites" button
-favoritesButton.addEventListener("click", saveJokeToFavorites);
+favoritesButton.addEventListener("click", function () {
+  saveJokeToFavorites();
+  this.blur();
+});
 
 // Function to save a joke to the "my favorites" list
 function saveJokeToFavorites() {
