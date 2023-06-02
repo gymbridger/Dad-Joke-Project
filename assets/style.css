@@ -68,7 +68,7 @@
   box-shadow: none;
   background-color: black;
   color: white;
-  border: none;
+  border: 2px solid white;
 }
 
 .favorite-button {
