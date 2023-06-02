@@ -1,0 +1,167 @@
+.justify-content-md-center {
+  background-color: orange;
+}
+
+#intro,
+#app-name {
+  display: flex;
+  justify-content: center;
+}
+
+.my-favorites {
+  display: flex;
+  justify-content: space-between;
+}
+
+#app-name {
+  font-size: 70px;
+  font-weight: bold;
+  font-style: italic;
+  border-bottom: 2px solid black;
+}
+
+.joke-app-header {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  margin: 15px;
+  border: 5px solid black;
+}
+
+.navbar-button {
+  background-color: lightblue;
+  font-size: 20px;
+  color: black;
+  border: 2px solid black;
+}
+
+.navbar-button:hover {
+  background-color: yellow;
+  color: black;
+  border: 2px solid black;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar-button:active {
+  transform: translateY(4px);
+}
+
+.joke-creator {
+  border: 5px solid black;
+  padding: 25px;
+  margin: 15px;
+}
+
+.joke-creator-button {
+  background-color: lightblue;
+  color: black;
+  border: 2px solid black;
+  font-size: 35px;
+}
+
+.joke-creator-button:hover {
+  background-color: yellow;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.joke-creator-button:active {
+  background-color: lightblue;
+}
+
+.favorite-button {
+  margin: 15px;
+  width: 15%;
+}
+
+.emoji-button {
+  border-radius: 5px;
+  background-color: lightblue;
+  border: 2px solid black;
+  color: #ffffff;
+  padding: 5px;
+  width: 125px;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.emoji-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.emoji-button:hover {
+  background-color: lightblue;
+}
+
+.emoji-button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.emoji-button:hover span {
+  padding-right: 25px;
+}
+
+.emoji-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.emoji-button:active {
+  transform: translateY(4px);
+}
+
+#populate-joke {
+  border: 3px dashed blue;
+  background-color: white;
+  width: max-content;
+  width: 85%;
+  margin: 15px;
+}
+=======
+#intro {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #app-name {
+    display: flex;
+    justify-content: center;
+  }
+  
+  navbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .my-favorites {
+    display: flex;
+    justify-content: space-between;
+  }
+  .list-group li {
+    cursor: pointer;
+  }
+  .list-group li:hover:after,
+  .list-group li.fav:after {
+    content: ' \2605';
+    color: rgb(255, 203, 0);
+  }
+  .list-group li.fav:hover:after {
+    content: ' \2606';
+  }
