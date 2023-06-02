@@ -92,7 +92,7 @@ function saveJokeToFavorites() {
 
   // Update the "my favorites" list in the HTML
   updateFavoritesList(favoriteJokes);
-  // Function to check if a joke already exists in the "my favorites" list
+  // ******THIS IS WHAT I CHANGED**** Function to check if a joke already exists in the "my favorites" list
 
 function isJokeInFavorites(joke) {
 
