@@ -10,7 +10,6 @@ jokeButton.addEventListener("click", handleClick);
 const favoritesButton = document.querySelector(".emoji-button");
 const favoritesList = document.querySelector(".list-group");
 
-
 //start array set to 'random' configuration by default, use a choice function to determine final array to fetch jokes from
 apiArray = [dadJokesURL, chuckJokesURL];
 
@@ -92,6 +91,18 @@ function saveJokeToFavorites() {
 function updateFavoritesList(jokes) {
   // Clear the current "my favorites" list
   favoritesList.innerHTML = "";
+
+
+   // Function to check if a joke already exists in the "my favorites" list
+
+    function isJokeInFavorites(joke) {
+
+    const favorites = Array.from(favoritesList.children);
+  
+    return favorites.some((item) => item.textContent === joke);
+  
+  }
+
 
   // Add each joke to the "my favorites" list
   jokes.forEach((joke) => {
