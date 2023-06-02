@@ -9,7 +9,7 @@ const chuckButton = document.querySelector("#chuck");
 
 jokeButton.addEventListener("click", handleClick);
 const favoritesButton = document.querySelector(".emoji-button");
-const favoritesList = document.querySelector(".my-favorites ul");
+const favoritesList = document.querySelector(".list-group");
 
 
 //start array set to 'random' configuration by default, use a choice function to determine final array to fetch jokes from
@@ -99,14 +99,10 @@ function saveJokeToFavorites() {
 
   // Save the updated favorite jokes list to local storage
   localStorage.setItem("jokeHolder", JSON.stringify(favoriteJokes));
-
+}
   // Update the "my favorites" list in the HTML
   updateFavoritesList(favoriteJokes);
-}
-
-// Function to update the "my favorites" list in the HTML
-function updateFavoritesList(jokes) {
-  // Clear the current "my favorites" list
+  function updateFavoritesList(jokes) {
   favoritesList.innerHTML = "";
 
   // Add each joke to the "my favorites" list
