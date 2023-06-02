@@ -74,7 +74,7 @@ favoritesButton.addEventListener("click", saveJokeToFavorites);
 function saveJokeToFavorites() {
   // Get the current joke text
   const jokeText = jokeHolder.textContent;
-
+  // Check if the joke holder is empty
   if (jokeText.trim() === "") {
 
     return; // Exit the function if there's no joke
@@ -157,7 +157,7 @@ function populateFavoritesListFromStorage() {
   if (favoriteJokes) {
     updateFavoritesList(favoriteJokes);
   }
-  // Check if the joke holder is empty
+
 
 
 }
