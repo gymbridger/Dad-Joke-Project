@@ -6,6 +6,8 @@ const chuckJokesURL = "https://api.chucknorris.io/jokes/random";
 const randomButton = document.querySelector("#random");
 const dadButton = document.querySelector("#dad");
 const chuckButton = document.querySelector("#chuck");
+
+jokeButton.addEventListener("click", handleClick);
 const favoritesButton = document.querySelector(".emoji-button");
 const favoritesList = document.querySelector(".list-group");
 
@@ -13,12 +15,6 @@ const favoritesList = document.querySelector(".list-group");
 //start array set to 'random' configuration by default, use a choice function to determine final array to fetch jokes from
 apiArray = [dadJokesURL, chuckJokesURL];
 
-
-
-//button clicks reset array then push chosen URLs. NOTE** This method does not scale easily if more APIs are added in the future and the user wants to filter multiple APIs. **
-randomButton.addEventListener("click", function() {
-    apiArray = []
-})
 //button clicks reset array then push chosen URLs. NOTE** This method does not scale easily if more APIs are added in the future and the user wants to filter multiple APIs. **
 randomButton.addEventListener("click", function() {
     apiArray = []
@@ -31,7 +27,6 @@ randomButton.addEventListener("click", function() {
 
 dadButton.addEventListener("click", function() {
     apiArray = []
-
     this.setAttribute("class", "btn btn-success me-2");
     randomButton.setAttribute("class", "btn btn-outline-success me-2");
     chuckButton.setAttribute("class", "btn btn-outline-success me-2");
@@ -41,14 +36,12 @@ dadButton.addEventListener("click", function() {
 
 chuckButton.addEventListener("click", function() {
     apiArray = []
-
     this.setAttribute("class", "btn btn-success me-2");
     randomButton.setAttribute("class", "btn btn-outline-success me-2");
     dadButton.setAttribute("class", "btn btn-outline-success me-2");
     apiArray.push(chuckJokesURL);
     console.log(apiArray);
 })
-
 
 function getAPI() {
     const randomizer = Math.floor(Math.random() * apiArray.length);
@@ -58,12 +51,9 @@ function getAPI() {
     
 };
 
-
 async function fetchJoke() {
-
     //uses whichever array is created from the buttons to provide the URLs
     var newAPI = getAPI();
-
     const response = await fetch(newAPI, {
         headers: {
             Accept: "application/json",
@@ -71,15 +61,12 @@ async function fetchJoke() {
         });
     const joke = await response.json();
     console.log(joke)
-    jokeHolder.textContent = joke.joke || joke.value;  
-    
+    jokeHolder.textContent = joke.joke || joke.value;   
 };
 
 async function handleClick() {
     await fetchJoke();
 };
-
-
 
 // Event listener for the "my-favorites" button
 favoritesButton.addEventListener("click", saveJokeToFavorites);
@@ -105,7 +92,7 @@ function saveJokeToFavorites() {
 // Function to update the "my favorites" list in the HTML
 function updateFavoritesList(jokes) {
   // Clear the current "my favorites" list
-  favoritesList.textContent = "";
+  favoritesList.innerHTML = "";
 
   // Add each joke to the "my favorites" list
   jokes.forEach((joke) => {
@@ -157,7 +144,3 @@ function populateFavoritesListFromStorage() {
 
 // Populate the "my favorites" list from local storage when the page loads
 populateFavoritesListFromStorage();
-
-async function handleClick() {
-        await fetchJoke();
-}
