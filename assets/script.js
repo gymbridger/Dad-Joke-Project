@@ -73,6 +73,13 @@ function saveJokeToFavorites() {
   // Get the current joke text
   const jokeText = jokeHolder.textContent;
 
+    // Check if the joke holder is empty
+  if (jokeText.trim() === "") {
+
+    return; // Exit the function if there's no joke
+  
+  }
+  
   // Retrieve the favorite jokes from local storage or initialize an empty array
   let favoriteJokes = JSON.parse(localStorage.getItem("jokeHolder")) || [];
 
