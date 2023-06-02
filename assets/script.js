@@ -1,4 +1,3 @@
-
 const jokeButton = document.querySelector(".btn-primary");
 const jokeHolder = document.querySelector("#populate-joke");
 const dadJokesURL = "http://icanhazdadjoke.com";
@@ -15,12 +14,6 @@ const favoritesList = document.querySelector(".list-group");
 //start array set to 'random' configuration by default, use a choice function to determine final array to fetch jokes from
 apiArray = [dadJokesURL, chuckJokesURL];
 
-
-
-//button clicks reset array then push chosen URLs. NOTE** This method does not scale easily if more APIs are added in the future and the user wants to filter multiple APIs. **
-randomButton.addEventListener("click", function() {
-    apiArray = []
-
 //button clicks reset array then push chosen URLs. NOTE** This method does not scale easily if more APIs are added in the future and the user wants to filter multiple APIs. **
 randomButton.addEventListener("click", function() {
     apiArray = []
@@ -33,7 +26,6 @@ randomButton.addEventListener("click", function() {
 
 dadButton.addEventListener("click", function() {
     apiArray = []
-
     this.setAttribute("class", "btn btn-success me-2");
     randomButton.setAttribute("class", "btn btn-outline-success me-2");
     chuckButton.setAttribute("class", "btn btn-outline-success me-2");
@@ -43,14 +35,12 @@ dadButton.addEventListener("click", function() {
 
 chuckButton.addEventListener("click", function() {
     apiArray = []
-
     this.setAttribute("class", "btn btn-success me-2");
     randomButton.setAttribute("class", "btn btn-outline-success me-2");
     dadButton.setAttribute("class", "btn btn-outline-success me-2");
     apiArray.push(chuckJokesURL);
     console.log(apiArray);
 })
-
 
 function getAPI() {
     const randomizer = Math.floor(Math.random() * apiArray.length);
@@ -60,12 +50,9 @@ function getAPI() {
     
 };
 
-
 async function fetchJoke() {
-
     //uses whichever array is created from the buttons to provide the URLs
     var newAPI = getAPI();
-
     const response = await fetch(newAPI, {
         headers: {
             Accept: "application/json",
@@ -73,15 +60,12 @@ async function fetchJoke() {
         });
     const joke = await response.json();
     console.log(joke)
-    jokeHolder.textContent = joke.joke || joke.value;  
-    
+    jokeHolder.textContent = joke.joke || joke.value;   
 };
 
 async function handleClick() {
     await fetchJoke();
 };
-
-
 
 // Event listener for the "my-favorites" button
 favoritesButton.addEventListener("click", saveJokeToFavorites);
@@ -91,6 +75,12 @@ function saveJokeToFavorites() {
   // Get the current joke text
   const jokeText = jokeHolder.textContent;
 
+  if (jokeText.trim() === "") {
+
+    return; // Exit the function if there's no joke
+  
+  }
+
   // Retrieve the favorite jokes from local storage or initialize an empty array
   let favoriteJokes = JSON.parse(localStorage.getItem("jokeHolder")) || [];
 
@@ -99,10 +89,26 @@ function saveJokeToFavorites() {
 
   // Save the updated favorite jokes list to local storage
   localStorage.setItem("jokeHolder", JSON.stringify(favoriteJokes));
-}
+
   // Update the "my favorites" list in the HTML
   updateFavoritesList(favoriteJokes);
-  function updateFavoritesList(jokes) {
+  // Function to check if a joke already exists in the "my favorites" list
+
+function isJokeInFavorites(joke) {
+
+  const favorites = Array.from(favoritesList.children);
+
+  return favorites.some((item) => item.textContent === joke);
+
+}
+
+}
+
+
+
+// Function to update the "my favorites" list in the HTML
+function updateFavoritesList(jokes) {
+  // Clear the current "my favorites" list
   favoritesList.innerHTML = "";
 
   // Add each joke to the "my favorites" list
@@ -151,23 +157,10 @@ function populateFavoritesListFromStorage() {
   if (favoriteJokes) {
     updateFavoritesList(favoriteJokes);
   }
+  // Check if the joke holder is empty
+
+
 }
 
 // Populate the "my favorites" list from local storage when the page loads
 populateFavoritesListFromStorage();
-
-async function fetchJoke2() {
-    const response = await fetch("https://api.chucknorris.io/jokes/random", {
-        headers: {
-            Accept: "application/json",
-        },
-        });
-    const joke = await response.json();
-    jokeHolder.textContent = joke.joke; 
-    };
-
-async function handleClick() {
-        await fetchJoke();
-}
-
-jokeButton.addEventListener("click", handleClick);
