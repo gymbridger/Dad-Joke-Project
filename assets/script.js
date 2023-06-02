@@ -72,10 +72,7 @@ favoritesButton.addEventListener("click", saveJokeToFavorites);
 function saveJokeToFavorites() {
   // Get the current joke text
   const jokeText = jokeHolder.textContent;
-<<<<<<< HEAD
 
-=======
->>>>>>> 891fd47242239f3c688f940cc9e1f11b931df3a4
   // Check if the joke holder is empty
   if (jokeText.trim() === "") {
 
@@ -94,18 +91,6 @@ function saveJokeToFavorites() {
 
   // Update the "my favorites" list in the HTML
   updateFavoritesList(favoriteJokes);
-<<<<<<< HEAD
-=======
-  // ******THIS IS WHAT I CHANGED**** Function to check if a joke already exists in the "my favorites" list
-
-function isJokeInFavorites(joke) {
-
-  const favorites = Array.from(favoritesList.children);
-
-  return favorites.some((item) => item.textContent === joke);
-
-}
->>>>>>> 891fd47242239f3c688f940cc9e1f11b931df3a4
 
 }
    // Function to check if a joke already exists in the "my favorites" list
@@ -169,12 +154,6 @@ function populateFavoritesListFromStorage() {
   if (favoriteJokes) {
     updateFavoritesList(favoriteJokes);
   }
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 891fd47242239f3c688f940cc9e1f11b931df3a4
 }
 
 // Populate the "my favorites" list from local storage when the page loads
