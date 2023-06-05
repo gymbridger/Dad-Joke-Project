@@ -1,0 +1,257 @@
+.justify-content-md-center {
+  background-image: url(./images/project\ 1\ photo.jpg);
+}
+
+.header {
+  background-color: antiquewhite;
+}
+
+.col-md-8 {
+  justify-content: center;
+}
+
+#intro,
+#app-name {
+  display: flex;
+  justify-content: center;
+}
+
+.my-favorites {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#app-name {
+  font-size: 5rem;
+  font-weight: bold;
+  font-style: italic;
+  border-bottom: 2px solid black;
+}
+
+.joke-app-header {
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  margin: 35px;
+  border: 5px solid black;
+}
+
+.joke-creator {
+  padding: 25px;
+  margin: 15px;
+}
+
+.joke-creator-button {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  font-size: 35px;
+}
+
+.joke-creator-button:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.joke-creator-button:active,
+.joke-creator-button:focus {
+  box-shadow: none;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.favorite-button {
+  margin: 15px;
+}
+
+.emoji-button {
+  border-radius: 20px;
+  background-color: black;
+  border: 2px solid white;
+  color: #ffffff;
+  padding: 5px;
+  width: 125px;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.emoji-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.emoji-button:hover {
+  background-color: black;
+}
+
+.emoji-button:focus {
+  background-color: black;
+  border: 5px solid white;
+}
+
+.emoji-button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.emoji-button:hover span {
+  padding-right: 25px;
+}
+
+.emoji-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.emoji-button:active {
+  transform: translateY(4px);
+}
+
+#populate-joke {
+  flex-grow: 1;
+  border: 3px groove black;
+  border-radius: 20px;
+  background-color: white;
+  margin: 15px;
+}
+
+.header {
+  border: 5px solid black;
+}
+
+.col-12.col-md-8 {
+  padding: 0px 0px 0px 0px;
+}
+
+@media screen and (min-width: 280px) and (max-width: 280px) and (min-height: 653px) and (max-height: 653px) {
+  .header {
+    height: 80vh;
+  }
+
+  #app-name {
+    font-size: 1.5rem;
+  }
+  .my-favorites {
+    margin-left: 0;
+    margin-right: 0;
+    flex-direction: column;
+  }
+  .favorite-button {
+    align-self: center;
+  }
+  #populate-joke {
+    height: 75px;
+  }
+  .navbar {
+    margin: 0px 10px 0px 10px;
+    flex-direction: column;
+  }
+  .joke-creator {
+    margin: 0;
+  }
+  .joke-creator-button {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 281px) and (max-width: 600px) {
+  #app-name {
+    font-size: 1.8rem;
+  }
+  .navbar {
+    flex-direction: column;
+  }
+  .my-favorites {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 820px) {
+  #app-name {
+    font-size: 3rem;
+  }
+  .navbar {
+    flex-direction: row;
+  }
+  .my-favorites {
+    flex-direction: row;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+}
+
+@media screen and (min-width: 820px) and (max-width: 1000px) {
+  #app-name {
+    font-size: 3.5rem;
+  }
+  .navbar {
+    flex-direction: row;
+    margin: 2%;
+  }
+  .my-favorites {
+    flex-direction: row;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .joke-app-header {
+    padding: 2%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #app-name {
+    font-size: 3.5rem;
+  }
+  .navbar {
+    flex-direction: row;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .my-favorites {
+    flex-direction: row;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .joke-app-header {
+    padding: 2%;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 375px) and (min-height: 667px) and (max-height: 667px) {
+  .header {
+    height: 85vh;
+  }
+  #populate-joke {
+    margin: 0;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .joke-creator-button {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 820px) and (max-width: 820px) and (min-height: 1180px) and (max-height: 1180px) {
+  .header {
+    height: 80vh;
+  }
+}
