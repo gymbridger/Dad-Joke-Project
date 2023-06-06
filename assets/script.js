@@ -1,6 +1,6 @@
 const jokeButton = document.querySelector(".joke-creator-button");
 const jokeHolder = document.querySelector("#populate-joke");
-const dadJokesURL = "http://icanhazdadjoke.com";
+const dadJokesURL = "https://icanhazdadjoke.com";
 const chuckJokesURL = "https://api.chucknorris.io/jokes/random";
 const randomButton = document.querySelector("#random");
 const dadButton = document.querySelector("#dad");
@@ -70,11 +70,11 @@ async function handleClick() {
 function showFavorites() {
   favoritesList.innerHTML = "";
   updateFavoritesList();
-};
+}
 
 function updateFavoritesList() {
   // Add each joke to the "my favorites" list
-  for(var i = 0; i < jokeHistory.length; i++) {
+  for (var i = 0; i < jokeHistory.length; i++) {
     var joke = jokeHistory[i];
     var listItem = document.createElement("li");
     listItem.classList.add("list-group-item");
@@ -91,18 +91,18 @@ function updateFavoritesList() {
 
     // Append the list item to the "my favorites" list
     favoritesList.prepend(listItem);
-  };
-};
+  }
+}
 
 //called at the very end of JS
-function getFavorites() { 
+function getFavorites() {
   var myFavorites = JSON.parse(localStorage.getItem("jokeHolder"));
-  if(myFavorites !== null) {
+  if (myFavorites !== null) {
     jokeHistory = myFavorites;
   }
   //renders key values from local storage
   showFavorites();
-};
+}
 
 // Function to save a joke to the "my favorites" list
 function saveJokeToFavorites() {
@@ -117,18 +117,18 @@ function saveJokeToFavorites() {
   jokeHistory.push(jokeText);
 
   // creates a new array by checking the favorite jokes history array and filtering out exact value matches to prevent duplicate jokes from being saved
-  var myFavorites = jokeHistory.filter(function(a) {
-    if(!this[a]) {
-        this[a] = 1; return a;
-    }}, {
-  });
+  var myFavorites = jokeHistory.filter(function (a) {
+    if (!this[a]) {
+      this[a] = 1;
+      return a;
+    }
+  }, {});
   // calls new array
   myFavorites;
 
   // Save the updated, filtered favorite jokes list to local storage
   localStorage.setItem("jokeHolder", JSON.stringify(myFavorites));
-
-};
+}
 
 // Event listener for the "my-favorites" button, checks stored jokes to avoid dupes, then gets the list so it has a current version without refresh, then renders
 favoritesButton.addEventListener("click", function () {
@@ -139,10 +139,10 @@ favoritesButton.addEventListener("click", function () {
 });
 
 // Event listener function checks HTML class "list group" for any button elements, targets the parent of that "remove" button and deletes it based on the index attribute set when the list element was created in the save joke function
-favoritesList.addEventListener("click", function(event) {
+favoritesList.addEventListener("click", function (event) {
   var remove = event.target;
 
-  if(remove.matches("button") === true) {
+  if (remove.matches("button") === true) {
     var index = remove.parentElement.getAttribute("data-index");
     jokeHistory.splice(index, 1);
 
