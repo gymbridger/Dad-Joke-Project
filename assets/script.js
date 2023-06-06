@@ -1,6 +1,6 @@
 const jokeButton = document.querySelector(".joke-creator-button");
 const jokeHolder = document.querySelector("#populate-joke");
-const dadJokesURL = "http://icanhazdadjoke.com";
+const dadJokesURL = "https://icanhazdadjoke.com";
 const chuckJokesURL = "https://api.chucknorris.io/jokes/random";
 const randomButton = document.querySelector("#random");
 const dadButton = document.querySelector("#dad");
